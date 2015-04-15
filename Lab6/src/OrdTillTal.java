@@ -3,14 +3,6 @@ import java.util.*;
 
 public class OrdTillTal {
 
-	//Läs in strängar och stoppa i en lista
-	//loopa igenom listan och
-	//plocka motsvarande heltal i strängform från en hashmap
-	//beroende på sträng, placera på ett visst index i en arraylist
-	//utdata strängen skapas genom att loopa igenom arraylisten och addera
-	//strängarna med varandra
-	//strängen konverteras till ett tal som skrivs ut 
-
 	public static void main(String[] args) {
 		HashMap<String, String> tal = new HashMap<String, String>();
 		tal.put("ett", "1");
@@ -33,28 +25,49 @@ public class OrdTillTal {
 		tal.put("sjutton", "17");
 		tal.put("arton", "18");
 		tal.put("nitton", "19");
-		
-		ArrayList<String> dummaTal = new ArrayList<String>();
-		dummaTal.add("hundra");
-		dummaTal.add("hundra");
-		dummaTal.add("tusen");
-		dummaTal.add("miljon");
-		dummaTal.add("miljoner");
-		dummaTal.add("miljard");
-		dummaTal.add("miljarder");
-		
-		//Läs in hela raden
-		//splitta på mellanslag och lägg i en lista
-		//loopa igenom listan
-		//om list[i+1] == hundra stoppa på specifik plats i output
-		//om list[i] == tjugo stoppa på specifik plats i output
-		
+		tal.put("tjugo", "20");
+		tal.put("trettio", "30");
+		tal.put("fyrtio", "40");
+		tal.put("femtio", "50");
+		tal.put("sextio", "60");
+		tal.put("sjuttio", "70");
+		tal.put("åttio", "80");
+		tal.put("nittio", "90");
+		tal.put("hundra", "100");
+		tal.put("tusen", "1000");
+		tal.put("miljon", "1000000");
+		tal.put("miljoner", "1000000");
+		tal.put("miljard", "1000000000");
+		tal.put("miljarder", "1000000000");
+
+		//Läs in strängar och stoppa i en lista
+		//loopa igenom listan och
+		//plocka motsvarande heltal i strängform från en hashmap
+		//beroende på sträng, placera på ett visst index i en arraylist
+		//utdata strängen skapas genom att loopa igenom arraylisten och addera
+		//strängarna med varandra i int form
+
 
 		//[hundra miljarder][tio miljarder][miljard][hundra miljoner]
 		//[tio miljoner][miljon][hundratusen][tiotusen][tusen][hundra]
 		//[ental/tiotal]
 
-		ArrayList<String> outputNumbers = new ArrayList<String>(11); 
+		ArrayList<String> outputNumbers = new ArrayList<String>(11);
+
+
+		//Läs in hela raden
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		//splitta på mellanslag och lägg i en lista
+		String inputList[] = input.split(" ");
+		//loopa igenom listan
+		for(int i=0; i<inputList.length; i++) {
+			//if
+			
+			//om list[i+1] == hundra stoppa på specifik plats i output
+			//om list[i] == tjugo stoppa på specifik plats i output
+		}
+		
 
 
 
