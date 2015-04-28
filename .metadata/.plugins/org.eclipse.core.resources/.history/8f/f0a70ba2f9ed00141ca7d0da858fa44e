@@ -152,7 +152,7 @@ public class OrdTillTal {
 
 			if(tusenIdx !=0) {
 				for(int i = miljonIdx; i<tusenIdx; i++) {
-					if(tal.get(inputList[i])<= 9  && i !=(inputList.length-1)  ) {
+					if(tal.get(inputList[i])<= 9  && i !=(inputList.length-1) && ) {
 						if(inputList[i+1].equals("hundra")) {
 							outputNumbers[6] = tal.get(inputList[i])*tal.get(inputList[i+1]);
 						} else {

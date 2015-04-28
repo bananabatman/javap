@@ -103,7 +103,7 @@ public class OrdTillTal {
 			} else if(inputList[i].equals("miljon") || inputList[i].equals("miljoner")) {
 				miljonIdx=i;
 			} else if(inputList[i].equals("miljard") || inputList[i].equals("miljarder")) {
-				miljardIdx=i;
+				milj ardIdx=i;
 			}
 
 			//plocka motsvarande heltal i strängform från en hashmap
@@ -113,16 +113,16 @@ public class OrdTillTal {
 
 		if(miljardIdx != 0) {
 			for(int i = 0; i<miljardIdx; i++) {
-				if(tal.get(inputList[i])<= 9  && i !=(inputList.length-1)) {
-					if(inputList[i+1].equals("hundra")) {
+				if(tal.get(inputList[i])<= 9) {
+					if(inputList[i+1].equals("hundra")  && i !=(inputList.length-1) {
 						outputNumbers[0] = tal.get(inputList[i])*tal.get(inputList[i+1]);
 					} else {
 						outputNumbers[2]=tal.get(inputList[i]);
 					}
 				} else if(tal.get(inputList[i]) <=90 && tal.get(inputList[i]) >= 10 ){
 					outputNumbers[1] = tal.get(inputList[i]); 
-				} else if(tal.get(inputList[i])<= 9) {
-					outputNumbers[2]=tal.get(inputList[i]);
+				} else if() {
+					
 				}
 			}
 
@@ -141,8 +141,8 @@ public class OrdTillTal {
 					}
 				} else if(tal.get(inputList[i]) <=90 && tal.get(inputList[i]) >= 10 ){
 					outputNumbers[4] = tal.get(inputList[i]); 
-				} else if(tal.get(inputList[i])<= 9) {
-					outputNumbers[5] = tal.get(inputList[i]);
+				} else if() {
+					
 				}
 			}
 			/*System.out.println("idx 3 hundRA miljoner "+outputNumbers[3]);
@@ -152,7 +152,7 @@ public class OrdTillTal {
 
 			if(tusenIdx !=0) {
 				for(int i = miljonIdx; i<tusenIdx; i++) {
-					if(tal.get(inputList[i])<= 9  && i !=(inputList.length-1)  ) {
+					if(tal.get(inputList[i])<= 9  && i !=(inputList.length-1)) {
 						if(inputList[i+1].equals("hundra")) {
 							outputNumbers[6] = tal.get(inputList[i])*tal.get(inputList[i+1]);
 						} else {
@@ -160,9 +160,7 @@ public class OrdTillTal {
 						}
 					} else if(tal.get(inputList[i]) <=90 && tal.get(inputList[i]) >= 10 ){
 						outputNumbers[7] = tal.get(inputList[i]); 
-					} else if(tal.get(inputList[i])<= 9) {
-						outputNumbers[8] = tal.get(inputList[i]);
-					}
+					} else if()
 				}
 				/*System.out.println("idx 6 hundRA tusen "+outputNumbers[6]);
 			System.out.println("idx 7 tio tusen "+outputNumbers[7]);
@@ -195,10 +193,10 @@ public class OrdTillTal {
 			long outputMiljon = (outputNumbers[3]+outputNumbers[4]+outputNumbers[5])*1000000;
 			int outputTusen = (outputNumbers[6]+outputNumbers[7]+outputNumbers[8])*1000;
 			int resterande = outputNumbers[9] + outputNumbers[10] + outputNumbers[11];
-			/*System.out.println("miljarder: "+outputMiljard);
+			System.out.println("miljarder: "+outputMiljard);
 		System.out.println("miljoner: "+outputMiljon);
 		System.out.println("tusen: "+outputTusen);
-		System.out.println("rest: "+resterande);*/
+		System.out.println("rest: "+resterande);
 
 			long output = outputMiljard+outputMiljon+outputTusen+resterande;
 			System.out.print("mu"+output);

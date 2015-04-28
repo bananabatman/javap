@@ -170,6 +170,7 @@ public class OrdTillTal {
 			}
 
 			for(int i=tusenIdx; i<inputList.length; i++) {
+				//blir fel pga i=0 och 0-1 = -1
 				if(tal.get(inputList[i])<= 9 && i !=(inputList.length-1)) {
 					if(inputList[i+1].equals("hundra")) {
 						outputNumbers[9] = tal.get(inputList[i])*tal.get(inputList[i+1]);
