@@ -1,0 +1,129 @@
+import java.util.*;
+
+
+public class OrdTillTal {
+
+	public static void main(String[] args) {
+		HashMap<String, String> tal = new HashMap<String, String>();
+		tal.put("ett", "1");
+		tal.put("en", "1");
+		tal.put("två", "2");
+		tal.put("tre", "3");
+		tal.put("fyra", "4");
+		tal.put("fem", "5");
+		tal.put("sex", "6");
+		tal.put("sju", "7");
+		tal.put("åtta", "8");
+		tal.put("nio", "9");
+		tal.put("tio", "10");
+		tal.put("elva", "11");
+		tal.put("tolv", "12");
+		tal.put("tretton", "13");
+		tal.put("fjorton", "14");
+		tal.put("femton", "15");
+		tal.put("sexton", "16");
+		tal.put("sjutton", "17");
+		tal.put("arton", "18");
+		tal.put("nitton", "19");
+		tal.put("tjugo", "20");
+		tal.put("trettio", "30");
+		tal.put("fyrtio", "40");
+		tal.put("femtio", "50");
+		tal.put("sextio", "60");
+		tal.put("sjuttio", "70");
+		tal.put("åttio", "80");
+		tal.put("nittio", "90");
+		tal.put("hundra", "100");
+		tal.put("tusen", "1000");
+		tal.put("miljon", "1000000");
+		tal.put("miljoner", "1000000");
+		tal.put("miljard", "1000000000");
+		tal.put("miljarder", "1000000000");
+
+		//Läs in hela raden
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		//splitta på mellanslag och lägg i en lista
+		String inputList[] = input.split(" ");
+		
+	
+
+
+		//specialfall som ej hanteras
+		// tolv hundra - skrivs som ett tusen två hundra
+		// hundra elva - skrivs som ett hundra elva
+
+		// fall som hanteras
+		// åtta hundra åttio åtta
+		// åtta miljoner åtta hundra åttio tusen åtta	
+	
+		
+
+		// typ av tal			index
+		//[hundra miljarder]	0
+		//[tio miljarder]		1	
+		//[miljard]				2
+		//[hundra miljoner]		3
+		//[tio miljoner]		4
+		//[miljon]				5
+		//[hundratusen]			6
+		//[tiotusen]			7
+		//[tusen]				8
+		//[hundra]				9
+		//[ental/tiotal]		10
+		
+		
+		//dela upp på följande vis
+		// 997 miljarder stoppas på index 0
+		// 1 miljon stoppas på index 5 
+		// 543 tusen stoppas på index 6 
+		// 1 hundra stoppas på index 9
+		// 18 stoppas på index 10
+
+		String[] outputNumbers = new String[11];
+		for(int i =0; i<outputNumbers.length; i++) {
+			outputNumbers[i]="0";
+		}
+		ArrayList parts = new ArrayList();
+		
+		for(int i=0; i<inputList.length; i++) {
+			parts.add(tal.get(inputList[i]));
+			System.out.println("PART: "+parts.get(i));
+			
+		}
+		
+		int hundraIdx = 0;
+		int tusenIdx = 0;
+		int miljonIdx = 0;
+		int miljardIdx = 0;
+		
+		//loopa igenom listan
+		for(int i=0; i<inputList.length; i++) {
+			if(inputList[i]=="hundra") {
+				hundraIdx=i;
+			} else if (inputList[i]=="tusen") {
+				tusenIdx=i;
+			} else if(inputList[i]=="miljon" || inputList[i]=="miljoner") {
+				miljonIdx=i;
+			} else if(inputList[i]=="miljard" || inputList[i]=="miljarder")
+					
+				
+			}
+
+			//plocka motsvarande heltal i strängform från en hashmap
+			//beroende på sträng, placera på ett visst index i en arraylist
+		}
+
+		//utdata strängen skapas genom att loopa igenom arraylisten och addera
+		String output = null;
+		for(int i =0; i<outputNumbers.length; i++) {
+			output+= outputNumbers[i];
+			//göra till int när loop klar eller dirr för varje segment?
+		}
+		
+		//strängarna med varandra i int form
+	}
+}
+
+//dela av på hundra, tusen, miljon, miljard och räkna ihop det innan
+//multiplicera sedan med hundra, tusen etc.
