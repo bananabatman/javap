@@ -143,8 +143,7 @@ public class OrdTillTal {
 			}
 			/*System.out.println("idx 3 hundRA miljoner "+outputNumbers[3]);
 			System.out.println("idx 4 tio miljoner "+outputNumbers[4]);
-			System.out.println("idx 5 miljon "+outputNumbers[5]);*/
-		}
+			System.out.println("idx 5 miljon "+outputNumbers[5]);}*/
 
 			if(tusenIdx !=0) {
 				for(int i = miljonIdx; i<tusenIdx; i++) {
@@ -189,12 +188,13 @@ public class OrdTillTal {
 			long outputMiljon = (outputNumbers[3]+outputNumbers[4]+outputNumbers[5])*1000000;
 			int outputTusen = (outputNumbers[6]+outputNumbers[7]+outputNumbers[8])*1000;
 			int resterande = outputNumbers[9] + outputNumbers[10] + outputNumbers[11];
-			System.out.println("miljarder: "+outputMiljard);
+			/*System.out.println("miljarder: "+outputMiljard);
 		System.out.println("miljoner: "+outputMiljon);
 		System.out.println("tusen: "+outputTusen);
-		System.out.println("rest: "+resterande);
+		System.out.println("rest: "+resterande);*/
 
 			long output = outputMiljard+outputMiljon+outputTusen+resterande;
-			System.out.print("mu"+output);
+			System.out.print(output);
 		}
 	}
+}

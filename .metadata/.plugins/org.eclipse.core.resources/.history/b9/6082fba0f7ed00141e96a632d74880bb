@@ -109,7 +109,7 @@ public class OrdTillTal {
 			//plocka motsvarande heltal i strängform från en hashmap
 			//beroende på sträng, placera på ett visst index i en arraylist
 		}
-		//System.out.println("tusen: "+tusenIdx+" miljon: "+miljonIdx+" miljard: "+miljardIdx);
+		System.out.println("tusen: "+tusenIdx+" miljon: "+miljonIdx+" miljard: "+miljardIdx);
 
 		if(miljardIdx != 0) {
 			for(int i = 0; i<miljardIdx; i++) {
@@ -124,9 +124,9 @@ public class OrdTillTal {
 				}
 			}
 
-			/*for(int j=0; j<3; j++) {
+			for(int j=0; j<3; j++) {
 				System.out.println("Output at idx " +j+ ", value : "+outputNumbers[j]);
-			}*/
+			}
 		} 
 
 		if(miljonIdx !=0) {
@@ -141,60 +141,59 @@ public class OrdTillTal {
 					outputNumbers[4] = tal.get(inputList[i]); 
 				}
 			}
-			/*System.out.println("idx 3 hundRA miljoner "+outputNumbers[3]);
+			System.out.println("idx 3 hundRA miljoner "+outputNumbers[3]);
 			System.out.println("idx 4 tio miljoner "+outputNumbers[4]);
-			System.out.println("idx 5 miljon "+outputNumbers[5]);*/
+			System.out.println("idx 5 miljon "+outputNumbers[5]);}
+
+		if(tusenIdx !=0) {
+			for(int i = miljonIdx; i<tusenIdx; i++) {
+				if(tal.get(inputList[i])<= 9) {
+					if(inputList[i+1].equals("hundra")) {
+						outputNumbers[6] = tal.get(inputList[i])*tal.get(inputList[i+1]);
+					} else {
+						outputNumbers[8] = tal.get(inputList[i]);
+					}
+				} else if(tal.get(inputList[i]) <=90 && tal.get(inputList[i]) >= 10 ){
+					outputNumbers[7] = tal.get(inputList[i]); 
+				}
+			}
+			System.out.println("idx 6 hundRA tusen "+outputNumbers[6]);
+			System.out.println("idx 7 tio tusen "+outputNumbers[7]);
+			System.out.println("idx 8 hundRA tusen "+outputNumbers[8]);
 		}
 
-			if(tusenIdx !=0) {
-				for(int i = miljonIdx; i<tusenIdx; i++) {
-					if(tal.get(inputList[i])<= 9) {
-						if(inputList[i+1].equals("hundra")) {
-							outputNumbers[6] = tal.get(inputList[i])*tal.get(inputList[i+1]);
-						} else {
-							outputNumbers[8] = tal.get(inputList[i]);
-						}
-					} else if(tal.get(inputList[i]) <=90 && tal.get(inputList[i]) >= 10 ){
-						outputNumbers[7] = tal.get(inputList[i]); 
-					}
-				}
-				/*System.out.println("idx 6 hundRA tusen "+outputNumbers[6]);
-			System.out.println("idx 7 tio tusen "+outputNumbers[7]);
-			System.out.println("idx 8 hundRA tusen "+outputNumbers[8]);*/
-			}
-
-			for(int i=tusenIdx; i<inputList.length; i++) {
-				if(tal.get(inputList[i])<= 9 && i !=(inputList.length-1)) {
-					if(inputList[i+1].equals("hundra")) {
-						outputNumbers[9] = tal.get(inputList[i])*tal.get(inputList[i+1]);
-					} else {
-						outputNumbers[11] = tal.get(inputList[i]);
-					}
-				} else if(tal.get(inputList[i])<= 9) {
+		for(int i=tusenIdx; i<inputList.length; i++) {
+			if(tal.get(inputList[i])<= 9 && i !=(inputList.length-1)) {
+				if(inputList[i+1].equals("hundra")) {
+					outputNumbers[9] = tal.get(inputList[i])*tal.get(inputList[i+1]);
+				} else {
 					outputNumbers[11] = tal.get(inputList[i]);
-				} else if(tal.get(inputList[i]) <=90 && tal.get(inputList[i]) >= 10 ){
-					outputNumbers[10] = tal.get(inputList[i]); 
 				}
-
+			} else if(tal.get(inputList[i])<= 9) {
+				outputNumbers[11] = tal.get(inputList[i]);
+			} else if(tal.get(inputList[i]) <=90 && tal.get(inputList[i]) >= 10 ){
+				outputNumbers[10] = tal.get(inputList[i]); 
 			}
-			//System.out.println("idx 9 hundRA "+outputNumbers[9]);
-			//System.out.println("idx 10 tiotal "+outputNumbers[10]);
-			//System.out.println("idx 11 ental "+outputNumbers[11]);
+
+		}
+		System.out.println("idx 9 hundRA "+outputNumbers[9]);
+		System.out.println("idx 10 tiotal "+outputNumbers[10]);
+		System.out.println("idx 11 ental "+outputNumbers[11]);
 
 
-			//utdata  skapas genom att loopa igenom arraylisten och addera
+		//utdata  skapas genom att loopa igenom arraylisten och addera
 
 
-			long outputMiljard = (long) (outputNumbers[0]+outputNumbers[1]+outputNumbers[2])*1000000000;
-			long outputMiljon = (outputNumbers[3]+outputNumbers[4]+outputNumbers[5])*1000000;
-			int outputTusen = (outputNumbers[6]+outputNumbers[7]+outputNumbers[8])*1000;
-			int resterande = outputNumbers[9] + outputNumbers[10] + outputNumbers[11];
-			System.out.println("miljarder: "+outputMiljard);
+		long outputMiljard = (long) (outputNumbers[0]+outputNumbers[1]+outputNumbers[2])*1000000000;
+		long outputMiljon = (outputNumbers[3]+outputNumbers[4]+outputNumbers[5])*1000000;
+		int outputTusen = (outputNumbers[6]+outputNumbers[7]+outputNumbers[8])*1000;
+		int resterande = outputNumbers[9] + outputNumbers[10] + outputNumbers[11];
+		/*System.out.println("miljarder: "+outputMiljard);
 		System.out.println("miljoner: "+outputMiljon);
 		System.out.println("tusen: "+outputTusen);
-		System.out.println("rest: "+resterande);
+		System.out.println("rest: "+resterande);*/
 
-			long output = outputMiljard+outputMiljon+outputTusen+resterande;
-			System.out.print("mu"+output);
-		}
+		long output = outputMiljard+outputMiljon+outputTusen+resterande;
+		System.out.print("output "+output);
 	}
+}

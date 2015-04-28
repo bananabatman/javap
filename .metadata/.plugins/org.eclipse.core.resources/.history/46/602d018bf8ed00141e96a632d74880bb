@@ -143,8 +143,7 @@ public class OrdTillTal {
 			}
 			/*System.out.println("idx 3 hundRA miljoner "+outputNumbers[3]);
 			System.out.println("idx 4 tio miljoner "+outputNumbers[4]);
-			System.out.println("idx 5 miljon "+outputNumbers[5]);*/
-		}
+			System.out.println("idx 5 miljon "+outputNumbers[5]);}*/
 
 			if(tusenIdx !=0) {
 				for(int i = miljonIdx; i<tusenIdx; i++) {
@@ -198,3 +197,4 @@ public class OrdTillTal {
 			System.out.print("mu"+output);
 		}
 	}
+}
