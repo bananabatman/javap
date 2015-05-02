@@ -201,6 +201,6 @@ public class OrdTillTal {
 		System.out.println("rest: "+resterande);*/
 
 			long output = outputMiljard+outputMiljon+outputTusen+resterande;
-			System.out.print("mu"+output);
+			System.out.print(output);
 		}
 	}
